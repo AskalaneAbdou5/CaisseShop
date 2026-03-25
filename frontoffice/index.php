@@ -29,10 +29,10 @@
         </nav>
 
         <nav class="nav-menu">
-            <a class="nav-lien actif" href="">
+            <a class="nav-lien actif" href="index.php">
                 Caisse
             </a>
-            <a class="nav-lien" href="">
+            <a class="nav-lien" href="produits.php">
                 Produits
             </a>
             <a class="nav-lien" href="">

@@ -43,15 +43,9 @@
 
   <main>
 
-        <a class="lien-retour" href="produits.php">← Retour à la liste</a>
+        <h1>Ajouter des produits</h1>
 
         <div class="carte-detail">
-
-            <!-- En-tête : nom + badge stock -->
-            <div class="detail-entete">
-                <h1 class="detail-titre">Pain</h1>
-                <span class="badge-stock">Stock 20</span>
-            </div>
 
             <form action="">
 
@@ -61,11 +55,11 @@
                     <div class="form-colonne-gauche">
                         <div class="champ">
                             <label for="nomProduit">Nom du produit</label>
-                            <input type="text" id="nomProduit" placeholder="Ex : Pain" value="Pain">
+                            <input type="text" id="nomProduit" placeholder="Ex : Pain" >
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" id="prixProduit" placeholder="Ex : 2.5" value="2.50">
+                            <input type="number" id="prixProduit" placeholder="Ex : 2.5" >
                         </div>
                     </div>
 
@@ -80,12 +74,12 @@
                 <div class="form-ligne">
                     <div class="champ">
                         <label class="label" for="stockProduit">Quantité en stock</label>
-                        <input class="input" type="number" id="stockProduit" placeholder="Ex : 200" value="200">
+                        <input class="input" type="number" id="stockProduit" placeholder="Ex : 200" >
                     </div>
                     <div class="champ">
                         <label class="label" for="codeBarresProduit">Code-barres</label>
                         <div class="input-codebarre-wrapper">
-                            <input class="input input-codebarre" type="text" id="codeBarresProduit" value="120245354544">
+                            <input class="input input-codebarre" type="text" id="codeBarresProduit">
                             <button class="bouton-imprimer" type="button" title="Imprimer le code-barres">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6 9 6 2 18 2 18 9"/>
@@ -155,8 +149,7 @@
 
                 <!-- Boutons -->
                 <div class="form-boutons">
-                    <button class="bouton-enregistrer" type="submit">Enregistrer</button>
-                    <button class="bouton-annuler" type="button">Annuler</button>
+                    <button class="bouton-enregistrer" type="submit">Ajouter</button>
                 </div>
 
             </form>

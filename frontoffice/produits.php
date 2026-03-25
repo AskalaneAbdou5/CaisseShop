@@ -29,10 +29,10 @@
         </nav>
 
         <nav class="nav-menu">
-            <a class="nav-lien " href="">
+            <a class="nav-lien " href="index.php">
                 Caisse
             </a>
-            <a class="nav-lien actif" href="">
+            <a class="nav-lien actif" href="produits.php">
                 Produits
             </a>
             <a class="nav-lien" href="">
@@ -48,7 +48,7 @@
                 <h1>Gestion des produits</h1>
                 <p>Consultez et gérez vos produits en stock</p>
             </div>
-            <button class="bouton-nouveau-produit">+ Nouveau Produit</button>
+            <button class="bouton-nouveau-produit" onclick="window.location.href='ajouterProduit.php'">+ Nouveau Produit</button>
         </div>
  
         <!-- Barre de recherche -->
@@ -79,7 +79,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -99,7 +99,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -119,7 +119,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -139,7 +139,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -159,7 +159,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -179,7 +179,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -199,7 +199,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
@@ -219,7 +219,7 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail">
+                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
                     <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                         <circle cx="12" cy="12" r="3"/>
