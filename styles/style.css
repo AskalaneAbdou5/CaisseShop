@@ -1,0 +1,125 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* --- Barre du haut (logo + user + déconnexion) --- */
+.nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.logo {
+    height: 36px;
+    width: auto;
+}
+
+.nav-top-droite {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.utilisateur {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+}
+
+.icone-user {
+    width: 20px;
+    height: 20px;
+    color: #555;
+}
+
+.nom-utilisateur {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.bouton-deconnexion {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background-color: #ffffff;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.bouton-deconnexion:hover {
+    background-color: #f5f5f5;
+}
+
+.icone-btn {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Menu de navigation (Caisse, Produits, Historique) --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 24px;
+}
+
+.nav-lien {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-lien:hover {
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+}
+
+/* Lien actif (Caisse sélectionné) */
+.nav-lien.actif {
+    background-color: #4da6e8;
+    color: #ffffff;
+}
+
+.icone-nav {
+    width: 16px;
+    height: 16px;
+}

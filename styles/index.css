@@ -1,0 +1,386 @@
+
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   COLONNE GAUCHE
+=========================== */
+.colonne-gauche {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* --- Bloc de recherche --- */
+.bloc-recherche {
+    background-color: #ffffff;
+    border: 2px solid #4da6e8;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.form-recherche {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-recherche-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+}
+
+.icone-recherche {
+    width: 18px;
+    height: 18px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.input-recherche {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+}
+
+.input-recherche::placeholder {
+    color: #aaa;
+}
+
+.bouton-filtrer {
+    padding: 8px 20px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-filtrer:hover {
+    background-color: #2e8fd4;
+}
+
+/* --- Grille des produits --- */
+.grille-produits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* --- Carte produit --- */
+.carte-produit {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.carte-produit:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #4da6e8;
+}
+
+.carte-produit-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produit-nom {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Badge "Stock 20" */
+.badge-stock {
+    background-color: #4da6e8;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.produit-description {
+    font-size: 13px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.produit-code {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+.icone-code {
+    width: 14px;
+    height: 14px;
+    color: #bbb;
+}
+
+.produit-prix {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4da6e8;
+    margin-top: 4px;
+}
+
+/* ===========================
+   COLONNE DROITE
+=========================== */
+.colonne-droite {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Titre commun des blocs droite */
+.bloc-titre {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* --- Bloc Panier --- */
+.bloc-panier {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ligne-panier {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background-color: #f7f9fb;
+    border-radius: 8px;
+}
+
+.panier-info {
+    flex: 1;
+}
+
+.panier-nom {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.panier-prix-unitaire {
+    font-size: 12px;
+    color: #888;
+}
+
+.panier-quantite {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bouton-qte {
+    width: 26px;
+    height: 26px;
+    background-color: #e8edf2;
+    border: 1px solid #d0d5dd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.bouton-qte:hover {
+    background-color: #d0d5dd;
+}
+
+.qte-valeur {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.panier-total-ligne {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    min-width: 44px;
+    text-align: right;
+}
+
+/* Bouton poubelle */
+.bouton-supprimer {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #e05555;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.bouton-supprimer:hover {
+    color: #c03030;
+}
+
+.bouton-supprimer svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Bloc Total --- */
+.bloc-total {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.total-articles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+.separateur {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-titre {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.total-montant {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.bouton-valider {
+    width: 100%;
+    padding: 12px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-valider:hover {
+    background-color: #2e8fd4;
+}
+
+/* --- Bloc Scanner --- */
+.bloc-scanner {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icone-scanner {
+    width: 18px;
+    height: 18px;
+    color: #333;
+}
+
+.form-scanner {
+    display: flex;
+    gap: 8px;
+}
+
+.input-scanner {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    color: #333;
+}
+
+.input-scanner:focus {
+    border-color: #4da6e8;
+    box-shadow: 0 0 0 3px rgba(77, 166, 232, 0.15);
+}
+
+.bouton-ajouter {
+    padding: 9px 14px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-ajouter:hover {
+    background-color: #2e8fd4;
+}
+
+.scanner-exemples {
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.5;
+}

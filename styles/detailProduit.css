@@ -1,0 +1,268 @@
+/* ===========================
+   PAGE DÉTAIL PRODUIT - main
+=========================== */
+main{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Lien retour --- */
+.lien-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lien-retour:hover {
+    color: #4da6e8;
+}
+
+.icone-retour {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Carte principale --- */
+.carte-detail {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- En-tête : titre + badge stock --- */
+.detail-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail-titre {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+/* badge-stock est déjà défini dans le CSS partagé,
+   mais on le redéfinit ici au cas où le fichier est utilisé seul */
+.badge-stock {
+    background-color: #4da6e8;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+/* --- Formulaire --- */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Ligne de champs côte à côte --- */
+.form-ligne {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* --- Champ individuel (label + input) --- */
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+/* --- Layout haut : Nom+Prix à gauche | Description à droite --- */
+.form-ligne-haute {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Colonne gauche : Nom empilé sur Prix */
+.form-colonne-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+/* La description prend toute la hauteur de la colonne gauche */
+.textarea-haute {
+    flex: 1;
+    min-height: 140px;
+    resize: none;
+}
+
+/* --- Label --- */
+label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* --- Input --- */
+input {
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: #4da6e8;
+    box-shadow: 0 0 0 3px rgba(77, 166, 232, 0.15);
+}
+
+/* --- Textarea (description) --- */
+.textarea {
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textarea:focus {
+    border-color: #4da6e8;
+    box-shadow: 0 0 0 3px rgba(77, 166, 232, 0.15);
+}
+
+/* --- Wrapper input code-barres + bouton imprimante --- */
+.input-codebarre-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-codebarre {
+    flex: 1;
+}
+
+.bouton-imprimer {
+    width: 38px;
+    height: 38px;
+    background-color: #ffffff;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    flex-shrink: 0;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.bouton-imprimer:hover {
+    background-color: #f0f2f5;
+    border-color: #4da6e8;
+    color: #4da6e8;
+}
+
+.bouton-imprimer svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Aperçu code-barres --- */
+.apercu-codebarre {
+    margin-top: 10px;
+    background-color: #f4f6f8;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.codebarre-svg {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+}
+
+.apercu-label {
+    font-size: 12px;
+    color: #888;
+}
+
+/* --- Séparateur --- */
+hr {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 4px 0;
+}
+
+/* --- Boutons du formulaire --- */
+.form-boutons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.bouton-enregistrer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-enregistrer:hover {
+    background-color: #2e8fd4;
+}
+
+.bouton-enregistrer svg {
+    width: 16px;
+    height: 16px;
+}
+
+.bouton-annuler {
+    padding: 10px 22px;
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-annuler:hover {
+    background-color: #f0f2f5;
+}

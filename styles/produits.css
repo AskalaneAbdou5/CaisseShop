@@ -1,0 +1,216 @@
+/* ===========================
+   PAGE PRODUITS - main
+=========================== */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- En-tête : titre à gauche + bouton à droite --- */
+.entete-produits {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.entete-produits-texte h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.entete-produits-texte p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.bouton-nouveau-produit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-nouveau-produit:hover {
+    background-color: #2e8fd4;
+}
+
+/* --- Barre de recherche --- */
+.bloc-recherche {
+    background-color: #ffffff;
+    border: 2px solid #4da6e8;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.form-recherche {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-recherche-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+}
+
+.icone-recherche {
+    width: 18px;
+    height: 18px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.input-recherche {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+}
+
+.input-recherche::placeholder {
+    color: #aaa;
+}
+
+.bouton-filtrer {
+    padding: 8px 20px;
+    background-color: #4da6e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bouton-filtrer:hover {
+    background-color: #2e8fd4;
+}
+
+/* --- Grille 4 colonnes --- */
+.grille-produits-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+/* --- Carte produit --- */
+.carte-produit {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.carte-produit:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #4da6e8;
+}
+
+.carte-produit-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produit-nom {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.badge-stock {
+    background-color: #4da6e8;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.produit-description {
+    font-size: 13px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.produit-code {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+.icone-code {
+    width: 14px;
+    height: 14px;
+    color: #bbb;
+}
+
+.produit-prix {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4da6e8;
+    margin-top: 4px;
+}
+
+/* --- Bouton Détail --- */
+.bouton-detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 7px 14px;
+    background-color: #ffffff;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    align-self: flex-start;
+}
+
+.bouton-detail:hover {
+    background-color: #f0f2f5;
+    border-color: #4da6e8;
+    color: #4da6e8;
+}
+
+/* Bouton actif (bleu) */
+.bouton-detail.actif {
+    background-color: #4da6e8;
+    border-color: #4da6e8;
+    color: #ffffff;
+}
+
+.icone-oeil {
+    width: 14px;
+    height: 14px;
+}
