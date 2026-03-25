@@ -35,7 +35,7 @@
             <a class="nav-lien" href="produits.php">
                 Produits
             </a>
-            <a class="nav-lien" href="">
+            <a class="nav-lien" href="historique.php">
                 Historique
             </a>
         </nav>

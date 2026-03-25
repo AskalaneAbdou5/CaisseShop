@@ -1,0 +1,180 @@
+/* ===== PAGE ===== */
+.historique-page {
+    background: #f4f4f4;
+    padding: 24px;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.historique-titre {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: #111;
+}
+
+.historique-description {
+    color: #666;
+    margin: 0 0 24px;
+    font-size: 14px;
+}
+
+/* ===== FILTRES ===== */
+.filtres-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.filtre-periode,
+.filtre-perso {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtre-label {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+}
+
+.filtre-select,
+.filtre-date {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.filtre-au {
+    font-size: 14px;
+    color: #444;
+}
+
+.filtre-btn {
+    padding: 8px 20px;
+    background: #1a6bbf;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filtre-btn:hover {
+    background: #1558a0;
+}
+
+/* ===== STATS ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.stat-titre {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px;
+}
+
+.stat-valeur {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+}
+
+/* ===== VENTES ===== */
+.vente-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.vente-card--actif {
+    border: 2px solid #1a6bbf;
+}
+
+.vente-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vente-numero {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+}
+
+.vente-date,
+.vente-caissier {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.vente-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.vente-prix {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a6bbf;
+    margin: 0;
+}
+
+.vente-badge {
+    background: #4caf50;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+.vente-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.vente-btn:hover {
+    background: #f0f0f0;
+}

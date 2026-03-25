@@ -35,7 +35,7 @@
             <a class="nav-lien actif" href="produits.php">
                 Produits
             </a>
-            <a class="nav-lien" href="">
+            <a class="nav-lien" href="historique.php">
                 Historique
             </a>
         </nav>
@@ -79,13 +79,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -99,13 +102,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -119,13 +125,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -139,13 +148,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -159,13 +171,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -179,13 +194,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -199,13 +217,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
             <article class="carte-produit">
@@ -219,13 +240,16 @@
                     2015Z255222
                 </p>
                 <h2 class="produit-prix">2.50€</h2>
-                <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                    <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                    Détail
-                </button>
+                <div class="action">
+                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        Détail
+                    </button>
+                    <button class="bouton-delete">Supprimer</button>
+                </div>
             </article>
  
         </div>

@@ -214,3 +214,31 @@ main {
     width: 14px;
     height: 14px;
 }
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bouton-delete{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 7px 14px;
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    align-self: flex-start;
+}
+
+.bouton-delete:hover {
+    background-color: #c40303;
+    border-color: #c40303;
+}
