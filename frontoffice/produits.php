@@ -1,3 +1,9 @@
+<?php
+require_once(__DIR__ . '/select.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -67,190 +73,38 @@
  
         <!-- Grille des produits -->
         <div class="grille-produits-4">
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
- 
-            <article class="carte-produit">
-                <div class="carte-produit-entete">
-                    <h3 class="produit-nom">Pain</h3>
-                    <span class="badge-stock">Stock 20</span>
-                </div>
-                <p class="produit-description">Pain bio de 400g</p>
-                <p class="produit-code">
-                    <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                    2015Z255222
-                </p>
-                <h2 class="produit-prix">2.50€</h2>
-                <div class="action">
-                    <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                        <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                        Détail
-                    </button>
-                    <button class="bouton-delete">Supprimer</button>
-                </div>
-            </article>
+
+            <?php for ($i=0; $i < count($produits); $i++) { ?>
+
+                <article class="carte-produit">
+                    <div class="carte-produit-entete">
+                        <!-- Le nom du produit -->
+                        <h3 class="produit-nom"><?php echo $produits[$i]['NomProduit'] ?></h3>
+                        <!-- Le nombre de stock du produit -->
+                        <span class="badge-stock">Stock <?php echo $produits[$i]['Stock'] ?></span>
+                    </div>
+                    <!-- Le description du produit -->
+                    <p class="produit-description"><?php echo $produits[$i]['Description'] ?></p>
+                    <p class="produit-code">
+                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
+                        <!-- Le code barres du produit -->
+                        <?php echo $produits[$i]['CodeBarres'] ?>
+                    </p>
+                    <!-- Le prix du produit -->
+                    <h2 class="produit-prix"><?php echo $produits[$i]['Prix'] ?>€</h2>
+                    <div class="action">
+                        <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
+                            <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            Détail
+                        </button>
+                        <button class="bouton-delete">Supprimer</button>
+                    </div>
+                </article>
+
+            <?php } ?>
  
         </div>
     </main>

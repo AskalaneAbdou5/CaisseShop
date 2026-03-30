@@ -1,3 +1,8 @@
+<?php
+require_once(__DIR__ . '/select.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +27,7 @@
                     <p class="nom-utilisateur">Jean Dullon</p>
                 </div>
 
-                <button class="bouton-deconnexion">
+                <button class="bouton-deconnexion" onclick="window.location.href='login.php'">
                     Déconnexion
                 </button>
             </div>
@@ -63,123 +68,27 @@
 
             <!-- Grille des produits -->
             <div class="grille-produits">
+                <?php for ($i=0; $i < count($produits); $i++) { ?>
 
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
+                    <article class="carte-produit">
+                        <div class="carte-produit-entete">
+                            <!-- Le nom du produit -->
+                            <h3 class="produit-nom"><?php echo $produits[$i]['NomProduit'] ?></h3>
+                            <!-- Le nombre de stock du produit -->
+                            <span class="badge-stock">Stock <?php echo $produits[$i]['Stock'] ?></span>
+                        </div>
+                        <!-- Le description du produit -->
+                        <p class="produit-description"><?php echo $produits[$i]['Description'] ?></p>
+                        <p class="produit-code">
+                            <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
+                            <!-- Le code barres du produit -->
+                            <?php echo $produits[$i]['CodeBarres'] ?>
+                        </p>
+                        <!-- Le prix du produit -->
+                        <h2 class="produit-prix"><?php echo $produits[$i]['Prix'] ?>€</h2>
+                    </article>
 
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
-
-                <article class="carte-produit">
-                    <div class="carte-produit-entete">
-                        <h3 class="produit-nom">Pain</h3>
-                        <span class="badge-stock">Stock 20</span>
-                    </div>
-                    <p class="produit-description">Pain bio de 400g</p>
-                    <p class="produit-code">
-                        <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                        2015Z255222
-                    </p>
-                    <h2 class="produit-prix">2.50€</h2>
-                </article>
+                <?php } ?>
 
             </div>
         </section>
