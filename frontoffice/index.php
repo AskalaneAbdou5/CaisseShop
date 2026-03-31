@@ -68,6 +68,7 @@ require_once(__DIR__ . '/select.php');
 
             <!-- Grille des produits -->
             <div class="grille-produits">
+                
                 <?php for ($i=0; $i < count($produits); $i++) { ?>
 
                     <article class="carte-produit">
