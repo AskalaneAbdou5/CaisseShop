@@ -87,33 +87,21 @@ require_once(__DIR__ . '/fonction.php');
             </div>
         </div>
 
-        <?php for ($i=0; $i < $venteProduits; $i++) { ?>
+        <?php for ($i=0; $i < count($ventes); $i++) { ?>
             <article class="vente-card vente-card">
                 <div class="vente-info">
                     <h2 class="vente-numero">Vente#<?php echo ($i+1) ?></h2>
-                    <p class="vente-date"><?php echo $venteProduits[$i]['Date'] ?></p>
-                    <p class="vente-caissier">Caissier : <?php echo $venteProduits[$i]['Nom']." ".$venteProduits[$i]['Prenom'] ?></p>
+                    <p class="vente-date"><?php echo $ventes[$i]['Date'] ?></p>
+                    <p class="vente-caissier">Caissier : <?php echo $ventes[$i]['Nom']." ".$ventes[$i]['Prenom'] ?></p>
                 </div>
                 <div class="vente-meta">
-                    <p class="vente-prix"><?php echo $venteProduits[$i]['Total'] ?>€</p>
-                    <span class="vente-badge"><?php echo nombreArticleDansUneVente($venteProduits[$i]['IdVente'], $venteProduits) ?> articles</span>
+                    <p class="vente-prix"><?php echo $ventes[$i]['Total'] ?>€</p>
+                    <span class="vente-badge"><?php echo nombreArticleDansUneVente($ventes[$i]['Id'], $venteProduits) ?> articles</span>
                     <button class="vente-btn">Voir détail</button>
                 </div>
             </article>
         <?php } ?>
 
-        <article class="vente-card">
-            <div class="vente-info">
-                <h2 class="vente-numero">Vente#2</h2>
-                <p class="vente-date">10/20/2026 10:23</p>
-                <p class="vente-caissier">Caissier : Jean Kollon</p>
-            </div>
-            <div class="vente-meta">
-                <p class="vente-prix">25.50€</p>
-                <span class="vente-badge">10 articles</span>
-                <button class="vente-btn">Voir détail</button>
-            </div>
-        </article>
     </main>
 
 </body>

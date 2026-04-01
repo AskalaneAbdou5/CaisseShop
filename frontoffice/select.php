@@ -11,6 +11,7 @@ $produits=$stmt->fetchall();
 //Selection des venteProduits
 
 $sql = "SELECT vtp.IdVente,
+vtp.IdProduit,
 vt.Date,
 vt.Total,
 ut.Nom,
@@ -22,5 +23,17 @@ JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $venteProduits=$stmt->fetchall();
+
+$sql = "SELECT vt.Id,
+vt.Date,
+vt.Total,
+ut.Nom,
+ut.Prenom
+FROM ventes vt
+JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$ventes=$stmt->fetchall();
+
 
 ?>
