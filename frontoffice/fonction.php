@@ -10,4 +10,12 @@ function nombreArticleDansUneVente($idVente,$venteProduits){
     return $nbArticle;
 }
 
+function CalculDuChiffreAffaires($ventes){
+    $chiffreAffaire=0;
+    for ($i=0; $i < count($ventes); $i++) { 
+        $chiffreAffaire += $ventes[$i]['Total'];
+    }
+    return $chiffreAffaire;
+}
+
 ?>

@@ -72,17 +72,17 @@ require_once(__DIR__ . '/fonction.php');
         <div class="stats-grid">
             <div class="stat-card">
                 <h2 class="stat-titre">Chiffre d'affaires</h2>
-                <b class="stat-valeur">10€</b>
+                <b class="stat-valeur"><?php echo CalculDuChiffreAffaires($ventes) ?>€</b>
                 <p class="stat-label">Total</p>
             </div>
             <div class="stat-card">
                 <h2 class="stat-titre">Ventes réalisées</h2>
-                <b class="stat-valeur">2</b>
+                <b class="stat-valeur"><?php echo count($ventes) ?></b>
                 <p class="stat-label">Transactions</p>
             </div>
             <div class="stat-card">
                 <h2 class="stat-titre">Articles vendus</h2>
-                <b class="stat-valeur">10</b>
+                <b class="stat-valeur"><?php echo count($venteProduits) ?></b>
                 <p class="stat-label">Articles</p>
             </div>
         </div>

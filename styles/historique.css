@@ -58,7 +58,7 @@
 
 .filtre-btn {
     padding: 8px 20px;
-    background: #1a6bbf;
+    background: #4da6e8;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -68,7 +68,7 @@
 }
 
 .filtre-btn:hover {
-    background: #1558a0;
+    background: #2e8fd4;
 }
 
 /* ===== STATS ===== */
