@@ -13,6 +13,8 @@ if(isset($_POST['deleteDetailId'])
     $stockProduit=$_POST['deleteDetailStock'];
     $descripProduit=$_POST['deleteDetailDescrip'];
     $codBarProduit=$_POST['deleteDetailCodBar'];
+}else{
+    header("Location: produits.php");
 }
 
 

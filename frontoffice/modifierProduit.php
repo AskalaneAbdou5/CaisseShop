@@ -1,3 +1,25 @@
+<?php
+
+if(isset($_POST['updateDetailId']) 
+&& isset($_POST['updateDetailNom']) 
+&& isset($_POST['updateDetailPrix'])
+&& isset($_POST['updateDetailStock'])
+&& isset($_POST['updateDetailDescrip'])
+&& isset($_POST['updateDetailCodBar'])){
+
+    $idProduit=$_POST['updateDetailId'];
+    $nomProduit=$_POST['updateDetailNom'];
+    $prixProduit=$_POST['updateDetailPrix'];
+    $stockProduit=$_POST['updateDetailStock'];
+    $descripProduit=$_POST['updateDetailDescrip'];
+    $codBarProduit=$_POST['updateDetailCodBar'];
+}else{
+    header("Location: produits.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,6 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/detailProduit.css">
+    <script src="https://cdn.jsdelivr.net/gh/dymosoftware/dymo-connect-framework/dymo.connect.framework.js"></script>
+    <script src="generateurCodeBarres.js" defer></script>
     <title>Caisse - CaisseShop</title>
 </head>
 <body>
@@ -49,11 +73,13 @@
 
             <!-- En-tête : nom + badge stock -->
             <div class="detail-entete">
-                <h1 class="detail-titre">Pain</h1>
-                <span class="badge-stock">Stock 20</span>
+                <h1 class="detail-titre"><?php echo $nomProduit ?></h1>
+                <span class="badge-stock">Stock <?php echo $stockProduit ?></span>
             </div>
 
             <form action="">
+
+            <input type="hidden" name="updatedDetailId" value="<?php echo $idProduit ?>">
 
                 <!-- Bloc haut : colonne gauche (Nom + Prix) | colonne droite (Description) -->
                 <div class="form-ligne-haute">
@@ -61,32 +87,42 @@
                     <div class="form-colonne-gauche">
                         <div class="champ">
                             <label for="nomProduit">Nom du produit</label>
-                            <input type="text" id="nomProduit" placeholder="Ex : Pain" value="Pain">
+                            <input type="text" id="productName" name="updatedDetailNom" placeholder="Ex : Pain" value="<?php echo $nomProduit ?>">
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" id="prixProduit" placeholder="Ex : 2.5" value="2.50">
+                            <input type="number" id="priceValue" name="updatedDetailPrix" placeholder="Ex : 2.5" value="<?php echo $prixProduit ?>">
                         </div>
                     </div>
 
                     <div class="champ">
                         <label class="label" for="descripProduit">Description</label>
-                        <textarea class="textarea textarea-haute" id="descripProduit" name="descripProduit" placeholder="Ex : Pain bio de 500g"></textarea>
+                        <textarea class="textarea textarea-haute" id="descripProduit" name="updatedDetailDescrip" placeholder="Ex : Pain bio de 500g" ><?php echo $descripProduit ?></textarea>
                     </div>
 
+                </div>
+                <div class="form-ligne">
+                    <div class="champ">
+                        <label for="printerSelect" class="label">Imprimante DYMO</label>
+                        <select id="printerSelect" class="select"></select>
+                    </div>
+                    <div class="champ">
+                        <label for="copies" class="label">Nombre d’exemplaires</label>
+                        <input class="input" id="copies" type="number" min="1" max="100" step="1" value="1" />
+                    </div>
                 </div>
 
                 <!-- Ligne : Quantité en stock + Code-barres -->
                 <div class="form-ligne">
                     <div class="champ">
                         <label class="label" for="stockProduit">Quantité en stock</label>
-                        <input class="input" type="number" id="stockProduit" placeholder="Ex : 200" value="200">
+                        <input class="input" type="number" id="stockProduit" name="updatedDetailStock" placeholder="Ex : 200" value="<?php echo $stockProduit ?>">
                     </div>
                     <div class="champ">
                         <label class="label" for="codeBarresProduit">Code-barres</label>
                         <div class="input-codebarre-wrapper">
-                            <input class="input input-codebarre" type="text" id="codeBarresProduit" value="120245354544">
-                            <button class="bouton-imprimer" type="button" title="Imprimer le code-barres">
+                            <input class="input input-codebarre" type="text" name="updatedDetailCodBar" id="barcodeValue" value="<?php echo $codBarProduit ?>">
+                            <button class="bouton-imprimer" type="button" title="Imprimer le code-barres" id="printBtn">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6 9 6 2 18 2 18 9"/>
                                     <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
@@ -96,67 +132,20 @@
                         </div>
 
                         <!-- Aperçu code-barres SVG statique -->
-                        <div class="apercu-codebarre">
-                            <svg class="codebarre-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
-                                <rect x="10"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="15"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="18"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="22"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="27"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="30"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="34"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="39"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="42"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="46"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="49"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="54"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="58"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="61"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="66"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="69"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="73"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="78"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="81"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="85"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="88"  y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="93"  y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="97"  y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="100" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="105" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="108" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="112" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="117" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="120" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="124" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="127" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="132" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="136" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="139" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="144" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="147" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="151" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="156" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="159" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="163" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="166" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="171" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <rect x="175" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="178" y="5" width="3"  height="40" fill="#1a1a1a"/>
-                                <rect x="183" y="5" width="1"  height="40" fill="#1a1a1a"/>
-                                <rect x="186" y="5" width="2"  height="40" fill="#1a1a1a"/>
-                                <text x="100" y="56" text-anchor="middle" font-size="8" fill="#555" font-family="monospace">120245354544</text>
-                            </svg>
+                        <div class="apercu-codebarre" id="previewZone">
+                            <div class="muted">Aucun aperçu généré.</div>
                             <p class="apercu-label">Aperçu du code-barres</p>
                         </div>
                     </div>
                 </div>
+                <div id="statusBox" class="status">Initialisation de DYMO…</div>
 
                 <hr>
 
                 <!-- Boutons -->
                 <div class="form-boutons">
                     <button class="bouton-enregistrer" type="submit">Enregistrer</button>
-                    <button class="bouton-annuler" type="button">Annuler</button>
+                    <button class="bouton-annuler" type="button" onclick="window.location.href='produits.php'">Annuler</button>
                 </div>
 
             </form>

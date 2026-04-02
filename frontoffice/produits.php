@@ -94,21 +94,34 @@ require_once(__DIR__ . '/select.php');
                     </p>
                     <!-- Le prix du produit -->
                     <h2 class="produit-prix"><?php echo $produits[$i]['Prix'] ?>€</h2>
+                    <!-- Les actions sur le produit -->
                     <div class="action">
-                        <button class="bouton-detail" onclick="window.location.href='modifierProduit.php'">
-                            <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                <circle cx="12" cy="12" r="3"/>
-                            </svg>
-                            Détail
-                        </button>
+                        <form action="modifierProduit.php" method="post">
+
+                            <input type="hidden" name="updateDetailId" value="<?php echo $produits[$i]['Id'] ?>">
+                            <input type="hidden" name="updateDetailNom" value="<?php echo $produits[$i]['NomProduit'] ?>">
+                            <input type="hidden" name="updateDetailPrix" value="<?php echo $produits[$i]['Prix'] ?>">
+                            <input type="hidden" name="updateDetailStock" value="<?php echo $produits[$i]['Stock'] ?>">
+                            <input type="hidden" name="updateDetailDescrip" value="<?php echo $produits[$i]['Description'] ?>">
+                            <input type="hidden" name="updateDetailCodBar" value="<?php echo $produits[$i]['CodeBarres'] ?>">
+
+                            <button class="bouton-detail" type="submit">
+                                <svg class="icone-oeil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Détail
+                            </button>
+                        </form>
                         <form action="comfirmationDeleteProduit.php" method="post">
+
                             <input type="hidden" name="deleteDetailId" value="<?php echo $produits[$i]['Id'] ?>">
                             <input type="hidden" name="deleteDetailNom" value="<?php echo $produits[$i]['NomProduit'] ?>">
                             <input type="hidden" name="deleteDetailPrix" value="<?php echo $produits[$i]['Prix'] ?>">
                             <input type="hidden" name="deleteDetailStock" value="<?php echo $produits[$i]['Stock'] ?>">
                             <input type="hidden" name="deleteDetailDescrip" value="<?php echo $produits[$i]['Description'] ?>">
                             <input type="hidden" name="deleteDetailCodBar" value="<?php echo $produits[$i]['CodeBarres'] ?>">
+
                             <button class="bouton-delete">Supprimer</button>
                         </form>
                     </div>
