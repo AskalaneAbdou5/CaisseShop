@@ -1,4 +1,6 @@
 <?php
+require_once('../asset/connexionbdd.php');
+require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/select.php');
 
 ?>
@@ -100,7 +102,13 @@ require_once(__DIR__ . '/select.php');
                             </svg>
                             Détail
                         </button>
-                        <form action="comfirmationDeleteProduit.php">
+                        <form action="comfirmationDeleteProduit.php" method="post">
+                            <input type="hidden" name="deleteDetailId" value="<?php echo $produits[$i]['Id'] ?>">
+                            <input type="hidden" name="deleteDetailNom" value="<?php echo $produits[$i]['NomProduit'] ?>">
+                            <input type="hidden" name="deleteDetailPrix" value="<?php echo $produits[$i]['Prix'] ?>">
+                            <input type="hidden" name="deleteDetailStock" value="<?php echo $produits[$i]['Stock'] ?>">
+                            <input type="hidden" name="deleteDetailDescrip" value="<?php echo $produits[$i]['Description'] ?>">
+                            <input type="hidden" name="deleteDetailCodBar" value="<?php echo $produits[$i]['CodeBarres'] ?>">
                             <button class="bouton-delete">Supprimer</button>
                         </form>
                     </div>

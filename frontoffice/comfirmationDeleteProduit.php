@@ -1,3 +1,24 @@
+<?php
+
+if(isset($_POST['deleteDetailId']) 
+&& isset($_POST['deleteDetailNom']) 
+&& isset($_POST['deleteDetailPrix'])
+&& isset($_POST['deleteDetailStock'])
+&& isset($_POST['deleteDetailDescrip'])
+&& isset($_POST['deleteDetailCodBar'])){
+
+    $idProduit=$_POST['deleteDetailId'];
+    $nomProduit=$_POST['deleteDetailNom'];
+    $prixProduit=$_POST['deleteDetailPrix'];
+    $stockProduit=$_POST['deleteDetailStock'];
+    $descripProduit=$_POST['deleteDetailDescrip'];
+    $codBarProduit=$_POST['deleteDetailCodBar'];
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -52,21 +73,22 @@
             <article class="carte-produit">
                 <div class="carte-produit-entete">
                     <!-- Le nom du produit -->
-                    <h3 class="produit-nom">Pain</h3>
+                    <h3 class="produit-nom"><?php echo $nomProduit ?></h3>
                     <!-- Le nombre de stock du produit -->
-                    <span class="badge-stock">Stock 50</span>
+                    <span class="badge-stock">Stock <?php echo $stockProduit ?></span>
                 </div>
                 <!-- Le description du produit -->
-                <p class="produit-description">pain bio fait par alane</p>
+                <p class="produit-description"><?php echo $descripProduit ?></p>
                 <p class="produit-code">
                     <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
                     <!-- Le code barres du produit -->
-                    555555
+                    <?php echo $codBarProduit ?>
                 </p>
                 <!-- Le prix du produit -->
-                <h2 class="produit-prix">20€</h2>
+                <h2 class="produit-prix"><?php echo $prixProduit ?>€</h2>
                 <div class="action">
-                    <form action="comfirmationDeleteProduit.php">
+                    <form action="produits.php" method="post">
+                        <input type="hidden" name="deleteProduit" value="<?php echo $idProduit ?>">
                         <button class="bouton-delete">Supprimer</button>
                     </form>
                     <button class="bouton-annuler" onclick="window.location.href='produits.php'">Annuler</button>

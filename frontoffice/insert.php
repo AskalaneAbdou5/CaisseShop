@@ -31,7 +31,7 @@ if (isset($_POST['nouveauNomProduit'])
         echo "<script> alert('Le produit a été bien ajouter');</script>";
     }else{
         echo "<script> alert('Veuillez remplir tous les champs');
-        window.location.href = 'contact.php';</script>";
+        window.location.href = 'ajouterProduit.php';</script>";
     }
     
 }

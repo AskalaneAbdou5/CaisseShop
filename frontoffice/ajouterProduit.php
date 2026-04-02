@@ -58,17 +58,17 @@
                     <div class="form-colonne-gauche">
                         <div class="champ">
                             <label for="nomProduit">Nom du produit</label>
-                            <input type="text" id="productName" name="nouveauNomProduit" placeholder="Ex : Pain" value="100 KG de RIZ">
+                            <input type="text" id="productName" name="nouveauNomProduit" placeholder="Ex : Pain" value="100 KG de RIZ" required>
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" name="nouveauPrixProduit" step="any" id="priceValue" placeholder="Ex : 2.5" value="33">
+                            <input type="number" name="nouveauPrixProduit" step="any" id="priceValue" placeholder="Ex : 2.5" value="33" required>
                         </div>
                     </div>
 
                     <div class="champ">
                         <label class="label" for="descripProduit">Description</label>
-                        <textarea class="textarea textarea-haute" name="nouveauDescripProduit" id="descripProduit" name="descripProduit" placeholder="Ex : Pain bio de 500g"></textarea>
+                        <textarea class="textarea textarea-haute" name="nouveauDescripProduit" id="descripProduit" name="descripProduit" placeholder="Ex : Pain bio de 500g" required></textarea>
                     </div>
 
                 </div>
@@ -87,12 +87,12 @@
                 <div class="form-ligne">
                     <div class="champ">
                         <label class="label" for="stockProduit">Quantité en stock</label>
-                        <input class="input" type="number" name="quantiteNouveauProduit" id="stockProduit" placeholder="Ex : 200" >
+                        <input class="input" type="number" name="quantiteNouveauProduit" id="stockProduit" placeholder="Ex : 200" required>
                     </div>
                     <div class="champ">
                         <label class="label" for="codeBarresProduit">Code-barres</label>
                         <div class="input-codebarre-wrapper">
-                            <input class="input input-codebarre" name="codeBarNouveauProduit" type="text" id="barcodeValue" value="REF-1234">
+                            <input class="input input-codebarre" name="codeBarNouveauProduit" type="text" id="barcodeValue" value="REF-1234" required>
                             <button class="bouton-imprimer" type="button" title="Imprimer le code-barres" id="printBtn">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="6 9 6 2 18 2 18 9"/>
