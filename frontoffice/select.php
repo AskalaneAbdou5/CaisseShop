@@ -12,10 +12,10 @@ $produits=$stmt->fetchall();
 
 $sql = "SELECT vtp.IdVente,
 vtp.IdProduit,
-vt.Date,
-vt.Total,
-ut.Nom,
-ut.Prenom
+pdt.NomProduit,
+vtp.Quantite,
+pdt.Prix,
+vtp.PrixTotalProduit
 FROM venteproduits vtp
 JOIN produits pdt ON vtp.IdProduit = pdt.Id
 JOIN ventes vt ON vtp.IdVente = vt.Id

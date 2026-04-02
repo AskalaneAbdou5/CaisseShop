@@ -2,6 +2,7 @@
 require_once(__DIR__ . '/select.php');
 require_once(__DIR__ . '/fonction.php');
 
+
 ?>
 
 <!DOCTYPE html>
@@ -89,16 +90,20 @@ require_once(__DIR__ . '/fonction.php');
 
         <?php for ($i=0; $i < count($ventes); $i++) { ?>
             <article class="vente-card vente-card">
-                <div class="vente-info">
-                    <h2 class="vente-numero">Vente#<?php echo ($i+1) ?></h2>
-                    <p class="vente-date"><?php echo $ventes[$i]['Date'] ?></p>
-                    <p class="vente-caissier">Caissier : <?php echo $ventes[$i]['Nom']." ".$ventes[$i]['Prenom'] ?></p>
+
+                <div class="vente-header">
+                    <div class="vente-info">
+                        <h2 class="vente-numero">Vente#<?php echo ($i+1) ?></h2>
+                        <p class="vente-date"><?php echo $ventes[$i]['Date'] ?></p>
+                        <p class="vente-caissier">Caissier : <?php echo $ventes[$i]['Nom']." ".$ventes[$i]['Prenom'] ?></p>
+                    </div>
+                    <div class="vente-meta">
+                        <p class="vente-prix"><?php echo $ventes[$i]['Total'] ?>€</p>
+                        <span class="vente-badge"><?php echo nombreArticleDansUneVente($ventes[$i]['Id'], $venteProduits) ?> articles</span>
+                        <button class="vente-btn">Voir détail</button>
+                    </div>
                 </div>
-                <div class="vente-meta">
-                    <p class="vente-prix"><?php echo $ventes[$i]['Total'] ?>€</p>
-                    <span class="vente-badge"><?php echo nombreArticleDansUneVente($ventes[$i]['Id'], $venteProduits) ?> articles</span>
-                    <button class="vente-btn">Voir détail</button>
-                </div>
+
             </article>
         <?php } ?>
 
