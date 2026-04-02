@@ -1,5 +1,6 @@
 <?php
 require_once('../asset/connexionbdd.php');
+require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/select.php');
 

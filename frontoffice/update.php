@@ -1,27 +1,29 @@
 <?php
 
 
-if(isset($_POST['updateDetailId']) 
-&& isset($_POST['updateDetailNom']) 
-&& isset($_POST['updateDetailPrix'])
-&& isset($_POST['updateDetailStock'])
-&& isset($_POST['updateDetailDescrip'])
-&& isset($_POST['updateDetailCodBar'])){
+if(isset($_POST['updatedDetailId']) 
+&& isset($_POST['updatedDetailNom']) 
+&& isset($_POST['updatedDetailPrix'])
+&& isset($_POST['updatedDetailStock'])
+&& isset($_POST['updatedDetailDescrip'])
+&& isset($_POST['updatedDetailCodBar'])){
 
-    $id_offre=$_POST['updated_id_offre'];
-    $titre=$_POST['updated_titre'];
-    $description=$_POST['updated_descript'];
-    $status=$_POST['updated_id_status'];
-    $contrat=$_POST['updated_id_contrat'];
+    $idProduit=$_POST['updatedDetailId'];
+    $nomProduit=$_POST['updatedDetailNom'];
+    $prix=$_POST['updatedDetailPrix'];
+    $stock=$_POST['updatedDetailStock'];
+    $descrip=$_POST['updatedDetailDescrip'];
+    $codBar=$_POST['updatedDetailCodBar'];
 
-    $sql = "UPDATE offres SET Titre=:titre, Description=:descript, Id_status=:id_status, Id_contrat=:id_contrat WHERE Id=:id";
+    $sql = "UPDATE produits SET NomProduit=:nomProduit, Description=:descrip, Prix=:prix, Stock=:stock, CodeBarres=:codBar WHERE Id=:id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
-        'id'=>$id_offre,
-        'titre'=>$titre,
-        'id_status'=>$status,
-        'id_contrat'=>$contrat,
-        'descript'=>$description
+        'id'=>$idProduit,
+        'nomProduit'=>$nomProduit,
+        'descrip'=>$descrip,
+        'prix'=>$prix,
+        'stock'=>$stock,
+        'codBar'=>$codBar
     ]);
 }
 

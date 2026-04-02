@@ -77,7 +77,7 @@ if(isset($_POST['updateDetailId'])
                 <span class="badge-stock">Stock <?php echo $stockProduit ?></span>
             </div>
 
-            <form action="">
+            <form action="produits.php" method="post">
 
             <input type="hidden" name="updatedDetailId" value="<?php echo $idProduit ?>">
 
