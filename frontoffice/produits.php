@@ -100,7 +100,9 @@ require_once(__DIR__ . '/select.php');
                             </svg>
                             Détail
                         </button>
-                        <button class="bouton-delete">Supprimer</button>
+                        <form action="comfirmationDeleteProduit.php">
+                            <button class="bouton-delete">Supprimer</button>
+                        </form>
                     </div>
                 </article>
 

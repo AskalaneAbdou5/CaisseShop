@@ -242,3 +242,26 @@ main {
     background-color: #c40303;
     border-color: #c40303;
 }
+
+.bouton-annuler {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 7px 14px;
+    background-color: #dfdfdf;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    align-self: flex-start;
+}
+
+.bouton-annuler:hover {
+    background-color: #b8b8b8;
+    border-color: #b4b4b4;
+    color: #333;
+}
