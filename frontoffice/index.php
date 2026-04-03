@@ -11,9 +11,15 @@ require_once(__DIR__ . '/select.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="caisse.js" defer></script>
     <title>Caisse - CaisseShop</title>
 </head>
 <body>
+
+    <!-- converti les données en json -->
+    <script>
+        const produits = <?php echo json_encode($produits); ?>;
+    </script>
 
     <header class="header">
         <nav class="nav-top">
@@ -83,7 +89,7 @@ require_once(__DIR__ . '/select.php');
                 
                 <?php for ($i=0; $i < count($produits); $i++) { ?>
 
-                    <article class="carte-produit">
+                    <article class="carte-produit" onclick="ajouterProduitPanier(<?php echo $produits[$i]['Id'] ?>)">
                         <div class="carte-produit-entete">
                             <!-- Le nom du produit -->
                             <h3 class="produit-nom"><?php echo $produits[$i]['NomProduit'] ?></h3>
@@ -110,109 +116,29 @@ require_once(__DIR__ . '/select.php');
         <section class="colonne-droite">
 
             <!-- PANIER -->
-            <div class="bloc-panier">
-                <h3 class="bloc-titre">Panier</h3>
+            <form action="ajoutVente.php" method="get">
+                <div class="bloc-panier" id="produitPanier">
+                    <h3 class="bloc-titre" >Panier</h3>
 
-                <div class="ligne-panier">
-                    <div class="panier-info">
-                        <b class="panier-nom">Pain</b>
-                        <p class="panier-prix-unitaire">2.50€</p>
-                    </div>
-                    <div class="panier-quantite">
-                        <button class="bouton-qte">−</button>
-                        <p class="qte-valeur">1</p>
-                        <button class="bouton-qte">+</button>
-                    </div>
-                    <h2 class="panier-total-ligne">2.50€</h2>
-                    <button class="bouton-supprimer">
-                        <!-- Icône poubelle SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"/>
-                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-                            <path d="M10 11v6M14 11v6"/>
-                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-                        </svg>
-                    </button>
                 </div>
+                
+                <br>
 
-                <div class="ligne-panier">
-                    <div class="panier-info">
-                        <b class="panier-nom">Pain</b>
-                        <p class="panier-prix-unitaire">2.50€</p>
+                <!-- TOTAL -->
+                <div class="bloc-total">
+                    <h3 class="bloc-titre">Total</h3>
+                    <div class="total-articles">
+                        <p class="total-label">Articles :</p>
+                        <p class="total-valeur" id="nbArticle">0</p>
                     </div>
-                    <div class="panier-quantite">
-                        <button class="bouton-qte">−</button>
-                        <p class="qte-valeur">1</p>
-                        <button class="bouton-qte">+</button>
+                    <hr class="separateur">
+                    <div class="total-final">
+                        <h2 class="total-titre">Total :</h2>
+                        <h2 class="total-montant" id="total" >0€</h2>
                     </div>
-                    <h2 class="panier-total-ligne">2.50€</h2>
-                    <button class="bouton-supprimer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"/>
-                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-                            <path d="M10 11v6M14 11v6"/>
-                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-                        </svg>
-                    </button>
+                    <button class="bouton-valider" type="submit">Valider la vente</button>
                 </div>
-
-                <div class="ligne-panier">
-                    <div class="panier-info">
-                        <b class="panier-nom">Pain</b>
-                        <p class="panier-prix-unitaire">2.50€</p>
-                    </div>
-                    <div class="panier-quantite">
-                        <button class="bouton-qte">−</button>
-                        <p class="qte-valeur">1</p>
-                        <button class="bouton-qte">+</button>
-                    </div>
-                    <h2 class="panier-total-ligne">2.50€</h2>
-                    <button class="bouton-supprimer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"/>
-                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-                            <path d="M10 11v6M14 11v6"/>
-                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="ligne-panier">
-                    <div class="panier-info">
-                        <b class="panier-nom">Pain</b>
-                        <p class="panier-prix-unitaire">2.50€</p>
-                    </div>
-                    <div class="panier-quantite">
-                        <button class="bouton-qte">−</button>
-                        <p class="qte-valeur">1</p>
-                        <button class="bouton-qte">+</button>
-                    </div>
-                    <h2 class="panier-total-ligne">2.50€</h2>
-                    <button class="bouton-supprimer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3 6 5 6 21 6"/>
-                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-                            <path d="M10 11v6M14 11v6"/>
-                            <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- TOTAL -->
-            <div class="bloc-total">
-                <h3 class="bloc-titre">Total</h3>
-                <div class="total-articles">
-                    <p class="total-label">Articles :</p>
-                    <p class="total-valeur">1</p>
-                </div>
-                <hr class="separateur">
-                <div class="total-final">
-                    <h2 class="total-titre">Total :</h2>
-                    <h2 class="total-montant">2.50€</h2>
-                </div>
-                <button class="bouton-valider">Valider la vente</button>
-            </div>
+            </form>
 
             <!-- SCANNER -->
             <div class="bloc-scanner">
