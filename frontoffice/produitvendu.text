@@ -1,0 +1,15 @@
+                <!-- Détails des produits vendus -->
+
+  for ($i=0; $i < count($venteProduits); $i++) { 
+                    if($ventes[$i]['Id'] == $venteProduits[$i]['IdVente']){?>
+                    
+                        <h3 class="section-title">Produits vendus</h3>
+                        <div class="product-item">
+                            <div class="product-info">
+                                <h4 class="product-name"> echo venteProduits[$i]['NomProduit'] ?></h4>
+                                <p class="product-qty"> echo venteProduits[$i]['Quantite']." × ".$venteProduits[$i]['Prix'] ?></p>
+                            </div>
+                            <span class="product-price"> echo venteProduits[$i]['PrixTotalProduit'] ?></span>
+                        </div>
+ }
+                }?>

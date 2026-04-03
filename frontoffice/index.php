@@ -53,15 +53,26 @@ require_once(__DIR__ . '/select.php');
 
             <!-- Barre de recherche -->
             <div class="bloc-recherche">
-                <form class="form-recherche" action="">
+                <form class="form-recherche" action="index.php" method="post">
                     <div class="input-recherche-wrapper">
 
+                        <!-- icone de recherche -->
                         <svg class="icone-recherche" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"/>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                         </svg>
 
-                        <input class="input-recherche" type="text" placeholder="Rechercher par nom, code barre ou catégorie....">
+                        <!-- barres de recherche -->
+                        <?php if (!isset($_POST['motcle'])){ ?>
+
+                            <input class="input-recherche" type="text" name="motcle" placeholder="Rechercher par nom, code barre ou prix....">
+
+                        <?php }else{ ?>
+
+                            <input class="input-recherche" type="text" name="motcle" placeholder="Rechercher par nom, code barre ou prix...." value="<?php echo  $_POST['motcle'] ?>">
+                            
+                        <?php }?>
+
                     </div>
                     <button class="bouton-filtrer" type="submit">Filtrer</button>
                 </form>
