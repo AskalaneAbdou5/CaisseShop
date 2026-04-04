@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . '/insert.php');
+require_once(__DIR__ . '/ajoutVente.php');
+require_once(__DIR__ . '/ajoutVenteProduit.php');
 require_once(__DIR__ . '/select.php');
 
 ?>
@@ -116,7 +118,7 @@ require_once(__DIR__ . '/select.php');
         <section class="colonne-droite">
 
             <!-- PANIER -->
-            <form action="ajoutVente.php" method="post">
+            <form action="index.php" method="post">
                 <div class="bloc-panier" id="produitPanier">
                     <h3 class="bloc-titre" >Panier</h3>
 
