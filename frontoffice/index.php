@@ -116,7 +116,7 @@ require_once(__DIR__ . '/select.php');
         <section class="colonne-droite">
 
             <!-- PANIER -->
-            <form action="ajoutVente.php" method="get">
+            <form action="ajoutVente.php" method="post">
                 <div class="bloc-panier" id="produitPanier">
                     <h3 class="bloc-titre" >Panier</h3>
 
