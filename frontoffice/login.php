@@ -14,16 +14,16 @@
 
             <h1>Connexion</h1>
 
-            <form action="">
+            <form action="index.php" method="post">
 
                 <div class="champ">
                     <label for="email">Email :</label>
-                    <input type="email" name="email">
+                    <input type="email" name="emailLogin">
                 </div>
 
                 <div class="champ">
                     <label for="mdp">Mot de passe :</label>
-                    <input type="password" name="mdp">
+                    <input type="password" name="mdpLogin">
                 </div>
                 
                 <button type="submit">connexion</button>

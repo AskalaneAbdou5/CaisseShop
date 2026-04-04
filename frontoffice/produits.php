@@ -1,9 +1,17 @@
 <?php
+session_start();
+
+require_once(__DIR__ . '/session.php');
 require_once('../asset/connexionbdd.php');
 require_once(__DIR__ . '/update.php');
 require_once(__DIR__ . '/delete.php');
 require_once(__DIR__ . '/select.php');
 
+//Redirige l'utilisateur dans la page connexion s'il n'est pas connecter
+
+if (!isset($_SESSION['LOG_USER'])) {
+    header("Location: login.php");
+}
 ?>
 
 
@@ -28,7 +36,7 @@ require_once(__DIR__ . '/select.php');
                         <circle cx="12" cy="8" r="4"/>
                         <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
                     </svg>
-                    <p class="nom-utilisateur">Jean Dullon</p>
+                    <p class="nom-utilisateur"><?php echo $_SESSION['LOG_USER'] ?></p>
                 </div>
 
                 <button class="bouton-deconnexion">

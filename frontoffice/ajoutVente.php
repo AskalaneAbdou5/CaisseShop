@@ -6,7 +6,7 @@ require_once(__DIR__ . '/select.php');
 if (isset($_POST['produits'])) {
 
     $produitsPanier = $_POST['produits'];
-    $idUtilisateur = 1;
+    $idUtilisateur = $_SESSION['LOG_ID_USER'];
     $total = 0; 
 
 

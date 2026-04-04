@@ -7,9 +7,11 @@ if (isset($_POST['produits'])) {
 
 
 
-    $sql = "SELECT * FROM ventes WHERE IdUtilisateur=1 ORDER BY Id DESC";
+    $sql = "SELECT * FROM ventes WHERE IdUtilisateur=:idUser ORDER BY Id DESC";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
+    $stmt->execute([
+        'idUser'=> $_SESSION['LOG_ID_USER']
+    ]);
     $ventes=$stmt->fetchall();
 
     $produitsPanier = $_POST['produits'];
