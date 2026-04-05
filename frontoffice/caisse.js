@@ -6,7 +6,7 @@ function afficherProduitPanier() {
 
     const divpanier = document.getElementById('produitPanier');
 
-    divpanier.innerHTML =`<h3 class="bloc-titre" >Panier</h3>`;
+    divpanier.innerHTML =" ";
 
     let total = 0;
     let nbArticle= 0;

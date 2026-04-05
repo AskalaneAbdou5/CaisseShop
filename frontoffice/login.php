@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_SESSION['LOG_USER'])) {
+    header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

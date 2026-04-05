@@ -128,8 +128,10 @@ if (!isset($_SESSION['LOG_USER'])) {
 
             <!-- PANIER -->
             <form action="index.php" method="post">
-                <div class="bloc-panier" id="produitPanier">
+                <div class="bloc-panier">
                     <h3 class="bloc-titre" >Panier</h3>
+
+                    <div class="sousBloc" id="produitPanier"></div>
 
                 </div>
                 

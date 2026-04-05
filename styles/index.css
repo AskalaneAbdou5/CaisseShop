@@ -180,7 +180,26 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
 }
+
+.sousBloc{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 200px;
+    gap: 10px;
+}
+
+.sousBloc::-webkit-scrollbar{
+    width: 3px;
+}
+
+.sousBloc::-webkit-scrollbar-thumb{
+    background: rgb(92, 174, 228);
+    border-radius: 3666px;
+}
+
 
 .ligne-panier {
     display: flex;
