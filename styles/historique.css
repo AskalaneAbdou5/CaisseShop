@@ -232,3 +232,18 @@
     font-weight: 700;
     color: #111;
 }
+
+.lien-retour {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lien-retour:hover {
+    color: #4da6e8;
+}
