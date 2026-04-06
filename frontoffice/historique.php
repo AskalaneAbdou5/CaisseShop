@@ -70,11 +70,23 @@ if (!isset($_SESSION['LOG_USER'])) {
                 </select>
             </form>
 
-            <form class="filtre-perso" action="">
+            <form class="filtre-perso" action="historique.php" method="post">
                 <label class="filtre-label" for="perso_periode_debut">Periode personalisé :</label>
-                <input class="filtre-date" type="date" name="perso_periode_debut" id="perso_periode_debut">
-                <span class="filtre-au">au</span>
-                <input class="filtre-date" type="date" name="perso_periode_fin" id="perso_periode_fin">
+
+                <?php if (!isset($_POST['perso_periode_debut']) && !isset($_POST['perso_periode_fin'])) { ?>
+
+                    <input class="filtre-date" type="date" name="perso_periode_debut" >
+                    <span class="filtre-au">au</span>
+                    <input class="filtre-date" type="date" name="perso_periode_fin" >
+
+                <?php }else{ ?>
+
+                    <input class="filtre-date" type="date" name="perso_periode_debut"  value="<?php echo $_POST['perso_periode_debut'] ?>">
+                    <span class="filtre-au">au</span>
+                    <input class="filtre-date" type="date" name="perso_periode_fin" value="<?php echo $_POST['perso_periode_fin'] ?>">
+
+                <?php } ?>
+
                 <button class="filtre-btn" type="submit">Filtrer</button>
             </form>
         </div>
