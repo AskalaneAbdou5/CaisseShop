@@ -92,7 +92,7 @@ if (!isset($_SESSION['LOG_USER'])) {
             </div>
             <div class="stat-card">
                 <h2 class="stat-titre">Articles vendus</h2>
-                <b class="stat-valeur"><?php echo count($venteProduits) ?></b>
+                <b class="stat-valeur"><?php echo nombreTotalArticle($venteProduits) ?></b>
                 <p class="stat-label">Articles</p>
             </div>
         </div>
