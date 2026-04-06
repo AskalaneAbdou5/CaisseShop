@@ -28,7 +28,8 @@ if (isset($_POST['nouveauNomProduit'])
             'codebar' => $codebar,
         ]);
 
-        echo "<script> alert('Le produit a été bien ajouter');</script>";
+        echo "<script> alert('Le produit a été bien ajouter');
+        window.location.href = 'produits.php';</script>";
     }else{
         echo "<script> alert('Veuillez remplir tous les champs');
         window.location.href = 'ajouterProduit.php';</script>";

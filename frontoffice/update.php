@@ -25,6 +25,8 @@ if(isset($_POST['updatedDetailId'])
         'stock'=>$stock,
         'codBar'=>$codBar
     ]);
+
+    header("Location: produits.php");
 }
 
 

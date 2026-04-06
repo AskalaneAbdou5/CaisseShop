@@ -10,6 +10,8 @@ if (isset($_POST['deleteProduit'])){
         'idProduit'=>$idProduit
     ]);
 
+    header("Location: produits.php");
+
 }
 
 ?>

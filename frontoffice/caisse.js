@@ -34,7 +34,7 @@ function afficherProduitPanier() {
         <div class="panier-quantite">
             <button class="bouton-qte" onclick="diminuerQuantiteProduitPanier(${panier[index].Id})">−</button>
             <p class="qte-valeur">${panier[index].Quantite}</p>
-            <button class="bouton-qte" onclick="augmenterQuantiteProduitPanier(${panier[index].Id})" id="augbouton" >+</button>
+            <button class="bouton-qte" onclick="augmenterQuantiteProduitPanier(${panier[index].Id})" >+</button>
         </div>
         <h2 class="panier-total-ligne">${panier[index].Prix * panier[index].Quantite}€</h2>
         <button class="bouton-supprimer" onclick="supprimerProduitPanier(${panier[index].Id})">
@@ -112,10 +112,6 @@ function augmenterQuantiteProduitPanier(id){
     const selectProduit = panier.find(p => p.Id ==id);
 
     selectProduit.Quantite+=1;
-
-    if (selectProduit.Quantite > selectProduit.Stock ) {
-        panier = panier.filter(p => p.Id !=id);
-    }
 
     afficherProduitPanier();
 }
