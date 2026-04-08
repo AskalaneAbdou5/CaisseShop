@@ -164,9 +164,9 @@ if (!isset($_SESSION['LOG_USER'])) {
                     </svg>
                     Scanner code-barres
                 </h3>
-                <form class="form-scanner" action="">
-                    <input class="input-scanner" type="text" placeholder="Scannez ou saisissez le code barres...">
-                    <button class="bouton-ajouter" type="submit">Ajouter</button>
+                <form class="form-scanner" id="btnScan">
+                    <input class="input-scanner" id="scan" type="text" placeholder="Scannez ou saisissez le code barres...">
+                    <button class="bouton-ajouter" >Ajouter</button>
                 </form>
                 <p class="scanner-exemples">Exemples: 3256220123456 (Pain), 3256220123457 (Lait), 3256220123458 (Pommes)</p>
             </div>

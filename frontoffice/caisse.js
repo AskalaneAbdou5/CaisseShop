@@ -78,8 +78,7 @@ function ajouterProduitPanier(id) {
     }else{
         produitexist.Quantite+=1;
     }
-
-
+    
     afficherProduitPanier();
 }
 
@@ -115,5 +114,26 @@ function augmenterQuantiteProduitPanier(id){
 
     afficherProduitPanier();
 }
+
+
+
+document.getElementById('btnScan').addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    const codeBarres = document.getElementById('scan');
+    const  recupIdProduit = produits.find(p => p.CodeBarres == codeBarres).Id;
+
+    if (recupIdProduit != null) {
+
+        ajouterProduitPanier(recupIdProduit)
+    }else{
+        alert("Le Code Barres est fausse")
+    }
+
+    afficherProduitPanier();
+
+});
+
+
 
 

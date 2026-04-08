@@ -137,7 +137,7 @@ function validateLabel() {
     function updateLabelValues(label) {
       const barcode = barcodeValue.value.trim();
       const name = productName.value.trim();
-      const price = priceValue.value.trim();
+      const price = "Prix : "+priceValue.value.trim();
 
       if (!barcode) {
         throw new Error('Veuillez saisir une valeur pour BARCODE.');
