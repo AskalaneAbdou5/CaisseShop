@@ -247,3 +247,37 @@
 .lien-retour:hover {
     color: #4da6e8;
 }
+
+.print-btn {
+    padding: 8px 20px;
+    background: #4da6e8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  #print, #print * {
+    visibility: visible;
+  }
+
+  #print {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+.print-btn {
+    display: none;
+  }
+
+}

@@ -85,7 +85,7 @@ if (isset($_POST['numVente'])
         <a class="lien-retour" href="historique.php">← Retour à l'historique</a><br><br>
 
 
-            <article class="vente-card vente-card">
+            <article class="vente-card vente-card" id="print">
 
                 <div class="vente-header">
                     <div class="vente-info">
@@ -118,6 +118,7 @@ if (isset($_POST['numVente'])
                         <br>
                 <?php }
                 }?>
+                <button class="print-btn" onclick="window.print()">Imprimer</button>
 
             </article>
 
