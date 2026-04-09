@@ -28,6 +28,7 @@ if (isset($_POST['nouveauNomProduit'])
         if ($codbarExiste) {
             echo "<script> alert('Le code barres existe déjà !!');
             window.location.href = 'ajouterProduit.php';</script>";
+            exit();
         }
 
         $sql = "INSERT INTO produits(NomProduit,Description,Prix,Stock,CodeBarres) VALUES(:nom, :descrip, :prix, :quantite, :codebar)"; 

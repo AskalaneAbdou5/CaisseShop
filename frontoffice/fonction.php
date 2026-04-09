@@ -4,20 +4,13 @@ function nombreArticleDansUneVente($idVente,$venteProduits){
     $nbArticle=0;
     for ($i=0; $i < count($venteProduits); $i++) { 
         if ($idVente == $venteProduits[$i]['IdVente']) {
-            $nbArticle+=$venteProduits[$i]['Quantite'];
+            $nbArticle+=1;
         }
     }
     return $nbArticle;
 }
 
-function nombreTotalArticle($venteProduits){
-    $totalArticle=0;
-    for ($i=0; $i < count($venteProduits); $i++) { 
-        $totalArticle+=$venteProduits[$i]['Quantite'];
 
-    }
-    return $totalArticle;
-}
 
 function CalculDuChiffreAffaires($ventes){
     $chiffreAffaire=0;

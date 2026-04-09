@@ -15,22 +15,22 @@ if(isset($_POST['updatedDetailId'])
     $descrip=trim($_POST['updatedDetailDescrip']);
     $codBar=trim($_POST['updatedDetailCodBar']);
     $codbarExist = false;
-    $codbarExistant = "";
 
     for ($i=0; $i < count($produits); $i++) { 
-        if ($codBar == $produits[$i]['CodeBarres']) {
+        if ($codBar == $produits[$i]['CodeBarres'] AND $idProduit != $produits[$i]['Id']) {
             $codbarExist = true;
-            $codbarExistant = $produits[$i]['CodeBarres'];
         }
     }
 
   
     if (!empty($nomProduit) && !empty($prix) && !empty($descrip) && !empty($stock) && !empty($codBar)) {
 
-        if (true) {
+        if ($codbarExist) {
             echo "<script> alert('Le code barres existe déjà !!');
             window.location.href = 'produits.php';</script>";
+            exit();
         }
+
 
         $sql = "UPDATE produits SET NomProduit=:nomProduit, Description=:descrip, Prix=:prix, Stock=:stock, CodeBarres=:codBar WHERE Id=:id";
         $stmt = $pdo->prepare($sql);
