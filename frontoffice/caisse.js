@@ -1,4 +1,5 @@
 let panier = [];
+let refProduit ="";
 
 
 
@@ -130,10 +131,48 @@ document.getElementById('btnScan').addEventListener('submit',(e) => {
         alert("Le Code Barres est fausse")
     }
 
-    afficherProduitPanier();
-
 });
 
+
+document.addEventListener('keydown',(e) => {
+
+    if (e.key != 'Enter') {
+        refProduit+=e.key;
+    }
+
+    if (e.key == 'Enter') {
+
+        if (refProduit != "") {
+            
+            const  recupIdProduit = produits.find(p => p.CodeBarres == convertirScan(refProduit));
+
+            if (recupIdProduit != null) {
+
+                ajouterProduitPanier(recupIdProduit.Id);
+                refProduit = "";
+
+            }else{
+                alert("Le Code Barres est fausse");
+            }
+        }
+
+    }
+})
+
+
+function convertirScan(code){
+        return code.replaceAll("Shift", "") 
+        .replaceAll("à", "0")
+        .replaceAll("&", "1")
+        .replaceAll("é", "2")
+        .replaceAll("\"", "3")
+        .replaceAll("'", "4")
+        .replaceAll("(", "5")
+        .replaceAll("-", "6")
+        .replaceAll("è", "7")
+        .replaceAll("_", "8")
+        .replaceAll("ç", "9");
+}
 
 
 
