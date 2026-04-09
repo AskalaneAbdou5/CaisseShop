@@ -51,7 +51,7 @@ if(isset($_POST['updateDetailId'])
                     <p class="nom-utilisateur"><?php echo $_SESSION['LOG_USER'] ?></p>
                 </div>
 
-                <button class="bouton-deconnexion">
+                <button class="bouton-deconnexion" onclick="window.location.href='logout.php'">
                     Déconnexion
                 </button>
             </div>

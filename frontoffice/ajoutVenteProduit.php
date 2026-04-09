@@ -23,6 +23,7 @@ if (isset($_POST['produits'])) {
         $idVente = $ventes[0]['Id'];
         $idProduit = $produitsPanier[$p]['Id'];
         $quantite = $produitsPanier[$p]['Quantite'];
+        $prixTotalProduit = 0;
 
         for ($i=0; $i < count($produits); $i++) { 
 

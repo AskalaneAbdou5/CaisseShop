@@ -48,7 +48,7 @@ if(isset($_POST['deleteDetailId'])
                     <p class="nom-utilisateur">Jean Dullon</p>
                 </div>
 
-                <button class="bouton-deconnexion">
+                <button class="bouton-deconnexion" onclick="window.location.href='logout.php'">
                     Déconnexion
                 </button>
             </div>

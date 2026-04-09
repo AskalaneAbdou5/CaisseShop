@@ -120,12 +120,12 @@ function augmenterQuantiteProduitPanier(id){
 document.getElementById('btnScan').addEventListener('submit',(e) => {
     e.preventDefault();
 
-    const codeBarres = document.getElementById('scan');
-    const  recupIdProduit = produits.find(p => p.CodeBarres == codeBarres).Id;
+    const codeBarres = document.getElementById('scan').value;
+    const  recupIdProduit = produits.find(p => p.CodeBarres == codeBarres);
 
     if (recupIdProduit != null) {
 
-        ajouterProduitPanier(recupIdProduit)
+        ajouterProduitPanier(recupIdProduit.Id)
     }else{
         alert("Le Code Barres est fausse")
     }
