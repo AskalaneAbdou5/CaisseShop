@@ -161,7 +161,7 @@ function augmenterQuantiteProduitPanier(id){
     afficherProduitPanier();
 }
 
-
+//Ajout de produit dans le pannier par le code barres
 
 document.getElementById('btnScan').addEventListener('submit',(e) => {
     e.preventDefault();
@@ -178,6 +178,7 @@ document.getElementById('btnScan').addEventListener('submit',(e) => {
 
 });
 
+//Ajout de produit dans le pannier par le scanneur
 
 document.addEventListener('keydown',(e) => {
 
