@@ -66,14 +66,35 @@ if (!isset($_SESSION['LOG_USER'])) {
         <p class="historique-description">Consultez l'historique de vos ventes et statistiques</p>
 
         <div class="filtres-row">
-            <form class="filtre-periode" action="">
+            <!-- Filtrage par periode -->
+            <form class="filtre-periode" action="historique.php" method="post">
                 <label class="filtre-label" for="periode">Periode :</label>
-                <select class="filtre-select" name="periode" id="periode">
-                    <option value="1">Aujourd'hui</option>
-                    <option value="2">Semaine</option>
+                <select class="filtre-select" name="periode">
+
+                    <?php if (isset($_POST['periode'])){ 
+                        if($_POST['periode'] == '1'){?>
+
+                            <option value="1" selected>Aujourd'hui</option>
+                            <option value="2">Semaine</option>
+
+                        <?php }else{ ?>
+
+                            <option value="1">Aujourd'hui</option>
+                            <option value="2" selected>Semaine</option>
+
+                    <?php }
+                    }else{?>
+
+                            <option value="1">Aujourd'hui</option>
+                            <option value="2">Semaine</option>
+
+                    <?php } ?>
+
                 </select>
+                <button class="filtre-btn" type="submit">Filtrer</button>
             </form>
 
+           <!-- Filtrage par periode personnalisé --> 
             <form class="filtre-perso" action="historique.php" method="post">
                 <label class="filtre-label" for="perso_periode_debut">Periode personalisé :</label>
 

@@ -70,7 +70,7 @@ if (!isset($_SESSION['LOG_USER'])) {
 
             <!-- Barre de recherche -->
             <div class="bloc-recherche">
-                <form class="form-recherche" action="index.php">
+                <form class="form-recherche">
                     <div class="input-recherche-wrapper">
 
                         <!-- icone de recherche -->

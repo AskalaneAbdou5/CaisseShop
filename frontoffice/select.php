@@ -1,15 +1,15 @@
 <?php
 require_once('../asset/connexionbdd.php');
 
-//Selection des produits
+//__________Selection des produits____________
 
 $sql = "SELECT * FROM produits WHERE 1=1";
 
-// Filtrage des données 
+//----Filtrage des données----
 
 $params = []; //permet de stocker les données passées en post
 
-    //MOT CLÉ
+//PAR MOT CLÉ
 
 
 if (isset($_POST['motcle'])){
@@ -28,7 +28,12 @@ $produits=$stmt->fetchall();
 
 
 
-//Selection des venteProduits
+
+
+
+
+
+//___________Selection des venteProduits__________
 
 $sql = "SELECT vtp.IdVente,
 vtp.IdProduit,
@@ -41,11 +46,11 @@ JOIN produits pdt ON vtp.IdProduit = pdt.Id
 JOIN ventes vt ON vtp.IdVente = vt.Id
 JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id";
 
-// Filtrage des données 
+//---Filtrage des données---- 
 
 $params = []; //permet de stocker les données passées en post
 
-    //MOT CLÉ
+//PAR DATE
 
 
 if (isset($_POST['perso_periode_debut']) && isset($_POST['perso_periode_fin'])){
@@ -59,11 +64,31 @@ if (isset($_POST['perso_periode_debut']) && isset($_POST['perso_periode_fin'])){
     $params['dateFin'] = $dateFin; //on stock la valeur en post dans params
 }
 
+//PAR PERIODE
+
+if (isset($_POST['periode'])) {
+    $periode = $_POST['periode'];
+
+    if ($periode == '1'){
+        $sql.=" AND DATE(vt.Date) = CURRENT_DATE";
+    }else{
+        $sql.=" AND DATE(vt.Date) > CURRENT_DATE - INTERVAL 7 DAY AND DATE(vt.Date) <= CURRENT_DATE";
+    }
+   
+}
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $venteProduits=$stmt->fetchall();
 
-//Selection des ventes
+
+
+
+
+
+
+
+//___________Selection des ventes_________
 
 $sql = "SELECT vt.Id,
 vt.Date,
@@ -73,11 +98,11 @@ ut.Prenom
 FROM ventes vt
 JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id WHERE 1=1";
 
-// Filtrage des données 
+//-----Filtrage des données-----
 
 $params = []; //permet de stocker les données passées en post
 
-    //MOT CLÉ
+    //PAR DATE
 
 
 if (isset($_POST['perso_periode_debut']) && isset($_POST['perso_periode_fin'])){
@@ -89,6 +114,19 @@ if (isset($_POST['perso_periode_debut']) && isset($_POST['perso_periode_fin'])){
 
     $params['dateDebut'] = $dateDebut; //on stock la valeur en post dans params
     $params['dateFin'] = $dateFin; //on stock la valeur en post dans params
+}
+
+//PAR PERIODE
+
+if (isset($_POST['periode'])) {
+    $periode = $_POST['periode'];
+
+    if ($periode == '1'){
+        $sql.=" AND DATE(vt.Date) = CURRENT_DATE";
+    }else{
+        $sql.=" AND DATE(vt.Date) > CURRENT_DATE - INTERVAL 7 DAY AND DATE(vt.Date) <= CURRENT_DATE";
+    }
+   
 }
 
 $sql.=" ORDER BY vt.Id ASC";

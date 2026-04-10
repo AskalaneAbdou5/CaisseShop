@@ -37,14 +37,16 @@ afficherProduit(produits);
 
 // filtrage des produits
 
-const inputMotcle = document.getElementById('motcle');
+const inputMotcle = document.getElementById('motcle');// recupere le input dont l'id est motcle
 
 inputMotcle.addEventListener('input',() =>{
-    
+
     produitsFiltre = produits.filter(p => p.NomProduit.toLowerCase().includes(inputMotcle.value));
     
     afficherProduit(produitsFiltre);
 })
+
+// affichage des produits dans le panier
 
 function afficherProduitPanier() {
 
