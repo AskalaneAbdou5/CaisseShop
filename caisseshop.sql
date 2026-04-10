@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 10 avr. 2026 à 09:25
+-- Généré le : ven. 10 avr. 2026 à 09:34
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -71,16 +71,9 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`Id`, `Nom`, `Prenom`, `Email`, `MotDePasse`) VALUES
 (1, 'Mamadou', 'abdou', 'mamadou@gmail.com', '$2y$10$Hp3dyoJ16KULuhqULZhwnuiTyx1Vmc53hcS7fXBKjZI8WpA6Zq/JS'),
-(2, 'Patate', 'Jean', 'jean.patate@gmail.com', 'patate123'),
-(3, 'Fromage', 'Camille', 'camille.fromage@gmail.com', 'cheese456'),
-(4, 'Baguette', 'Pierre', 'pierre.baguette@gmail.com', 'pain789'),
-(5, 'Poulet', 'Roti', 'roti.poulet@gmail.com', 'chicken007'),
-(6, 'Banane', 'Split', 'banane.split@gmail.com', 'dessert321'),
-(7, 'Tartine', 'Beurre', 'tartine.beurre@gmail.com', 'toast999'),
-(8, 'Chaussette', 'Perdue', 'chaussette.perdue@gmail.com', 'sock404'),
-(9, 'Licorne', 'Magique', 'licorne.magique@gmail.com', 'unicorn777'),
-(10, 'Pixel', 'Cassé', 'pixel.casse@gmail.com', 'bug123'),
-(11, 'Clavier', 'Azerty', 'clavier.azerty@gmail.com', 'keyboard456');
+(2, 'Patate', 'Jean', 'jean.patate@gmail.com', '$2y$10$NkMsusgVF.vTYbsF5XSenOEK4iOi7o/57E5dfM76uYL.RjtTBLV92'),
+(3, 'Fromage', 'Camille', 'camille.fromage@gmail.com', '$2y$10$KG0hf6K9b4gv87OB0mPrY.cg7BwqNB0307C1CdXfP0Lou5mJBZ7D6'),
+(4, 'Baguette', 'Pierre', 'pierre.baguette@gmail.com', '$2y$10$8PUeHgALJCeYurQiCi1JXetcelfSP6M7XBeFz.kajRYkIW/TVY72u');
 
 -- --------------------------------------------------------
 
@@ -218,12 +211,6 @@ ALTER TABLE `ventes`
 --
 ALTER TABLE `venteproduits`
   ADD CONSTRAINT `produi_venteproduit` FOREIGN KEY (`IdProduit`) REFERENCES `produits` (`Id`) ON DELETE NO ACTION;
-
---
--- Contraintes pour la table `ventes`
---
-ALTER TABLE `ventes`
-  ADD CONSTRAINT `utilisateur_vente` FOREIGN KEY (`IdUtilisateur`) REFERENCES `utilisateurs` (`Id`) ON DELETE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
