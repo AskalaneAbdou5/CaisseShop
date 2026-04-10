@@ -70,7 +70,7 @@ if (!isset($_SESSION['LOG_USER'])) {
 
             <!-- Barre de recherche -->
             <div class="bloc-recherche">
-                <form class="form-recherche" action="index.php" method="post">
+                <form class="form-recherche" action="index.php">
                     <div class="input-recherche-wrapper">
 
                         <!-- icone de recherche -->
@@ -84,7 +84,6 @@ if (!isset($_SESSION['LOG_USER'])) {
                         <input class="input-recherche" type="text" name="motcle" id="motcle" placeholder="Rechercher par nom, code barre ou prix....">
 
                     </div>
-                    <button class="bouton-filtrer">Filtrer</button>
                 </form>
             </div>
 

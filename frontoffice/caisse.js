@@ -1,19 +1,12 @@
 let panier = [];
 let refProduit ="";
-let modifProduit =[];
 
 
-const motcle = document.getElementById('motcle');
-
-motcle.addEventListener('input',() =>{
-    console.log(motcle.value);
-    modifProduit = [produits.filter(p => p.NomProduit.includes(motcle.value))];
-    console.log(modifProduit);
-})
 
 function afficherProduit(tableau) {
 
     const divProduits = document.getElementById('grilleProduits');
+    divProduits.innerHTML = "";
 
     for (let index = 0; index < tableau.length; index++) {
 
@@ -41,6 +34,17 @@ function afficherProduit(tableau) {
 }
 
 afficherProduit(produits);
+
+// filtrage des produits
+
+const inputMotcle = document.getElementById('motcle');
+
+inputMotcle.addEventListener('input',() =>{
+    
+    produitsFiltre = produits.filter(p => p.NomProduit.toLowerCase().includes(inputMotcle.value));
+    
+    afficherProduit(produitsFiltre);
+})
 
 function afficherProduitPanier() {
 

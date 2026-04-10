@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 10 avr. 2026 à 09:34
+-- Généré le : ven. 10 avr. 2026 à 20:07
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `produits` (
 INSERT INTO `produits` (`Id`, `NomProduit`, `Description`, `Prix`, `Stock`, `CodeBarres`) VALUES
 (1, 'Pain', 'Pain bio 400 g', 2.5, 187, '12252002'),
 (2, 'Pain Luxe', 'Pain artisanal truffé 400 g', 25, 49, '12252006'),
-(3, 'Fromage Premium', 'Fromage affiné 24 mois', 120, 30, '12252003'),
+(3, 'Fromage Premium', 'Fromage affiné 24 mois', 120, 28, '12252003'),
 (4, 'Caviar Royal', 'Caviar importé haute qualité 100 g', 450, 10, '12252004'),
 (5, 'Huile d’olive rare', 'Huile d’olive extra vierge édition limitée', 85, 40, '12252005'),
 (6, 'Chocolat Gold', 'Chocolat avec feuille d’or 24 carats', 150, 25, '12252009'),
@@ -96,20 +96,11 @@ CREATE TABLE `venteproduits` (
 INSERT INTO `venteproduits` (`Id`, `IdVente`, `IdProduit`, `Quantite`, `PrixTotalProduit`) VALUES
 (1, 2, 4, 6, 2700),
 (2, 3, 1, 2, 5),
-(3, 11, 2, 1, 25),
 (4, 4, 3, 5, 600),
-(5, 5, 4, 3, 1350),
-(6, 6, 5, 6, 510),
-(7, 7, 6, 7, 1050),
-(8, 8, 2, 1, 25),
-(9, 9, 3, 2, 240),
-(10, 10, 4, 5, 2250),
 (11, 1, 7, 3, 285),
 (13, 1, 1, 3, 7.5),
 (14, 1, 3, 3, 360),
-(15, 12, 1, 1, 2.5),
-(16, 12, 2, 1, 25),
-(17, 13, 1, 12, 30);
+(18, 14, 3, 2, 240);
 
 -- --------------------------------------------------------
 
@@ -120,7 +111,7 @@ INSERT INTO `venteproduits` (`Id`, `IdVente`, `IdProduit`, `Quantite`, `PrixTota
 CREATE TABLE `ventes` (
   `Id` int(11) NOT NULL,
   `IdUtilisateur` int(11) NOT NULL,
-  `Date` date NOT NULL DEFAULT current_timestamp(),
+  `Date` datetime NOT NULL DEFAULT current_timestamp(),
   `Total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -129,19 +120,11 @@ CREATE TABLE `ventes` (
 --
 
 INSERT INTO `ventes` (`Id`, `IdUtilisateur`, `Date`, `Total`) VALUES
-(1, 1, '2026-03-10', 652.5),
-(2, 2, '2026-03-11', 2700),
-(3, 3, '2026-03-12', 5),
-(4, 4, '2026-03-13', 600),
-(5, 5, '2026-03-14', 1350),
-(6, 6, '2026-03-15', 510),
-(7, 7, '2026-03-16', 1050),
-(8, 8, '2026-03-17', 25),
-(9, 9, '2026-03-18', 240),
-(10, 10, '2026-03-19', 2250),
-(11, 1, '2026-03-20', 25),
-(12, 1, '2026-04-09', 27.5),
-(13, 1, '2026-04-09', 30);
+(1, 1, '2026-03-10 06:21:00', 652.5),
+(2, 2, '2026-03-11 13:20:00', 2700),
+(3, 3, '2026-03-12 11:18:00', 5),
+(4, 4, '2026-03-13 15:27:00', 600),
+(14, 1, '2026-04-10 18:38:00', 240);
 
 --
 -- Index pour les tables déchargées
@@ -194,13 +177,13 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `venteproduits`
 --
 ALTER TABLE `venteproduits`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `ventes`
 --
 ALTER TABLE `ventes`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Contraintes pour les tables déchargées
