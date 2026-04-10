@@ -1,7 +1,46 @@
 let panier = [];
 let refProduit ="";
+let modifProduit =[];
 
 
+const motcle = document.getElementById('motcle');
+
+motcle.addEventListener('input',() =>{
+    console.log(motcle.value);
+    modifProduit = [produits.filter(p => p.NomProduit.includes(motcle.value))];
+    console.log(modifProduit);
+})
+
+function afficherProduit(tableau) {
+
+    const divProduits = document.getElementById('grilleProduits');
+
+    for (let index = 0; index < tableau.length; index++) {
+
+        divProduits.innerHTML+= `
+        <article class="carte-produit" onclick="ajouterProduitPanier(${tableau[index]['Id']})">
+            <div class="carte-produit-entete">
+                <!-- Le nom du produit -->
+                <h3 class="produit-nom">${tableau[index]['NomProduit']}</h3>
+                <!-- Le nombre de stock du produit -->
+                <span class="badge-stock">Stock ${tableau[index]['Stock']}</span>
+            </div>
+            <!-- Le description du produit -->
+            <p class="produit-description">${tableau[index]['Description']}</p>
+            <p class="produit-code">
+                <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
+                <!-- Le code barres du produit -->
+                ${tableau[index]['CodeBarres']}
+            </p>
+            <!-- Le prix du produit -->
+            <h2 class="produit-prix">${tableau[index]['Prix']}€</h2>
+        </article>`
+
+     }
+
+}
+
+afficherProduit(produits);
 
 function afficherProduitPanier() {
 
@@ -173,6 +212,9 @@ function convertirScan(code){
         .replaceAll("_", "8")
         .replaceAll("ç", "9");
 }
+
+
+
 
 
 

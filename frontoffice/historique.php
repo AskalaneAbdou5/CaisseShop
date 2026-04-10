@@ -24,6 +24,10 @@ if (!isset($_SESSION['LOG_USER'])) {
 </head>
 <body>
 
+    <!-- converti les données en json -->
+    <script>
+        const ventes = <?php echo json_encode($ventes); ?>;
+    </script>
 
     <header class="header">
         <nav class="nav-top">
@@ -115,7 +119,7 @@ if (!isset($_SESSION['LOG_USER'])) {
                 <div class="vente-header">
                     <div class="vente-info">
                         <h2 class="vente-numero">Vente#<?php echo ($i+1) ?></h2>
-                        <p class="vente-date"><?php echo $ventes[$i]['Date'] ?></p>
+                        <p class="vente-date"><?php echo date('d/m/Y - H :i',strtotime($ventes[$i]['Date'])) ?></p>
                         <p class="vente-caissier">Caissier : <?php echo $ventes[$i]['Nom']." ".$ventes[$i]['Prenom'] ?></p>
                     </div>
                     <div class="vente-meta">

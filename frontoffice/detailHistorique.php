@@ -24,6 +24,8 @@ if (isset($_POST['numVente'])
     $fullNameVente=$_POST['fullNameVente'];
     $totalVente=$_POST['totalVente'];
     $nbArticleVente=$_POST['nbArticleVente'];
+}else{
+    header("Location: historique.php");
 }
 
 ?>

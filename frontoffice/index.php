@@ -29,7 +29,7 @@ if (!isset($_SESSION['LOG_USER'])) {
 
     <!-- converti les données en json -->
     <script>
-        const produits = <?php echo json_encode($produits); ?>;
+        let produits = <?php echo json_encode($produits); ?>;
     </script>
 
     <header class="header">
@@ -80,46 +80,16 @@ if (!isset($_SESSION['LOG_USER'])) {
                         </svg>
 
                         <!-- barres de recherche -->
-                        <?php if (!isset($_POST['motcle'])){ ?>
-
-                            <input class="input-recherche" type="text" name="motcle" placeholder="Rechercher par nom, code barre ou prix....">
-
-                        <?php }else{ ?>
-
-                            <input class="input-recherche" type="text" name="motcle" placeholder="Rechercher par nom, code barre ou prix...." value="<?php echo  $_POST['motcle'] ?>">
-                            
-                        <?php }?>
+                         
+                        <input class="input-recherche" type="text" name="motcle" id="motcle" placeholder="Rechercher par nom, code barre ou prix....">
 
                     </div>
-                    <button class="bouton-filtrer" type="submit">Filtrer</button>
+                    <button class="bouton-filtrer">Filtrer</button>
                 </form>
             </div>
 
             <!-- Grille des produits -->
-            <div class="grille-produits">
-                
-                <?php for ($i=0; $i < count($produits); $i++) { ?>
-
-                    <article class="carte-produit" onclick="ajouterProduitPanier(<?php echo $produits[$i]['Id'] ?>)">
-                        <div class="carte-produit-entete">
-                            <!-- Le nom du produit -->
-                            <h3 class="produit-nom"><?php echo $produits[$i]['NomProduit'] ?></h3>
-                            <!-- Le nombre de stock du produit -->
-                            <span class="badge-stock">Stock <?php echo $produits[$i]['Stock'] ?></span>
-                        </div>
-                        <!-- Le description du produit -->
-                        <p class="produit-description"><?php echo $produits[$i]['Description'] ?></p>
-                        <p class="produit-code">
-                            <svg class="icone-code" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="4" width="2" height="16"/><rect x="5" y="4" width="1" height="16"/><rect x="8" y="4" width="2" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="15" y="4" width="3" height="16"/><rect x="20" y="4" width="1" height="16"/></svg>
-                            <!-- Le code barres du produit -->
-                            <?php echo $produits[$i]['CodeBarres'] ?>
-                        </p>
-                        <!-- Le prix du produit -->
-                        <h2 class="produit-prix"><?php echo $produits[$i]['Prix'] ?>€</h2>
-                    </article>
-
-                <?php } ?>
-
+            <div class="grille-produits" id="grilleProduits">
             </div>
         </section>
 

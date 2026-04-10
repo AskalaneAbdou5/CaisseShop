@@ -91,6 +91,7 @@ if (isset($_POST['perso_periode_debut']) && isset($_POST['perso_periode_fin'])){
     $params['dateFin'] = $dateFin; //on stock la valeur en post dans params
 }
 
+$sql.=" ORDER BY vt.Id ASC";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
