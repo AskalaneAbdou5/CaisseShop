@@ -35,18 +35,20 @@ function afficherProduit(tableau) {
 
 afficherProduit(produits);
 
-// filtrage des produits
+//________filtrage des produits___________
 
 const inputMotcle = document.getElementById('motcle');// recupere le input dont l'id est motcle
 
 inputMotcle.addEventListener('input',() =>{
 
-    produitsFiltre = produits.filter(p => p.NomProduit.toLowerCase().includes(inputMotcle.value));
+    produitsFiltre = produits.filter(p => p.NomProduit.toLowerCase().includes(inputMotcle.value) 
+    || p.Description.toLowerCase().includes(inputMotcle.value) 
+    || p.Prix.toString().includes(inputMotcle.value.toString()));
     
     afficherProduit(produitsFiltre);
 })
 
-// affichage des produits dans le panier
+//_________affichage des produits dans le panier____________
 
 function afficherProduitPanier() {
 
