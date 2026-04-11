@@ -96,13 +96,13 @@ if(isset($_POST['updateDetailId'])
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" id="priceValue" name="updatedDetailPrix" placeholder="Ex : 2.5" value="<?php echo $prixProduit ?>">
+                            <input type="number" id="priceValue" step="any" name="updatedDetailPrix" placeholder="Ex : 2.5" value="<?php echo $prixProduit ?>">
                         </div>
                     </div>
 
                     <div class="champ">
                         <label class="label" for="descripProduit">Description</label>
-                        <textarea class="textarea textarea-haute" id="descripProduit" name="updatedDetailDescrip" placeholder="Ex : Pain bio de 500g" ><?php echo $descripProduit ?></textarea>
+                        <textarea class="textarea textarea-haute"  id="descripProduit" name="updatedDetailDescrip" placeholder="Ex : Pain bio de 500g" ><?php echo $descripProduit ?></textarea>
                     </div>
 
                 </div>

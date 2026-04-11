@@ -43,7 +43,9 @@ inputMotcle.addEventListener('input',() =>{
 
     produitsFiltre = produits.filter(p => p.NomProduit.toLowerCase().includes(inputMotcle.value) 
     || p.Description.toLowerCase().includes(inputMotcle.value) 
-    || p.Prix.toString().includes(inputMotcle.value.toString()));
+    || p.Prix.toString().includes(inputMotcle.value.toString()) 
+    || p.CodeBarres.toLowerCase().includes(inputMotcle.value) 
+    || p.Stock.toString().includes(inputMotcle.value.toString()));
     
     afficherProduit(produitsFiltre);
 })
