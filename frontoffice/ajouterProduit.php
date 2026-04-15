@@ -76,7 +76,7 @@ if (!isset($_SESSION['LOG_USER'])) {
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" name="nouveauPrixProduit" step="any" id="priceValue" placeholder="Ex : 2.5" value="33" required>
+                            <input type="number" name="nouveauPrixProduit" step="0.01" id="priceValue" placeholder="Ex : 2.5" value="33" required>
                         </div>
                     </div>
 
