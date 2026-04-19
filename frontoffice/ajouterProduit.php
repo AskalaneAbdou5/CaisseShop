@@ -76,7 +76,7 @@ if (!isset($_SESSION['LOG_USER'])) {
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" name="nouveauPrixProduit" step="any" id="priceValue" placeholder="Ex : 2.5" value="33" required>
+                            <input type="number" name="nouveauPrixProduit" min="0" step="any" id="priceValue" placeholder="Ex : 2.5" value="33" required>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@ if (!isset($_SESSION['LOG_USER'])) {
                 <div class="form-ligne">
                     <div class="champ">
                         <label class="label" for="stockProduit">Quantité en stock</label>
-                        <input class="input" type="number" name="quantiteNouveauProduit" id="stockProduit" placeholder="Ex : 200" required>
+                        <input class="input" type="number" min="0" name="quantiteNouveauProduit" id="stockProduit" placeholder="Ex : 200" required>
                     </div>
                     <div class="champ">
                         <label class="label" for="codeBarresProduit">Code-barres</label>

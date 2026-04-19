@@ -44,7 +44,7 @@ vtp.PrixTotalProduit
 FROM venteproduits vtp
 JOIN produits pdt ON vtp.IdProduit = pdt.Id
 JOIN ventes vt ON vtp.IdVente = vt.Id
-JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id";
+JOIN utilisateurs ut ON vt.IdUtilisateur = ut.Id WHERE 1=1";
 
 //---Filtrage des données---- 
 

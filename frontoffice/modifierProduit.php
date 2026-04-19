@@ -96,7 +96,7 @@ if(isset($_POST['updateDetailId'])
                         </div>
                         <div class="champ">
                             <label for="prixProduit">Prix (€)</label>
-                            <input type="number" id="priceValue" step="any" name="updatedDetailPrix" placeholder="Ex : 2.5" value="<?php echo $prixProduit ?>">
+                            <input type="number" id="priceValue" step="any" name="updatedDetailPrix" min="0" placeholder="Ex : 2.5" value="<?php echo $prixProduit ?>">
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@ if(isset($_POST['updateDetailId'])
                 <div class="form-ligne">
                     <div class="champ">
                         <label class="label" for="stockProduit">Quantité en stock</label>
-                        <input class="input" type="number" id="stockProduit" name="updatedDetailStock" placeholder="Ex : 200" value="<?php echo $stockProduit ?>">
+                        <input class="input" type="number" id="stockProduit" min="0" name="updatedDetailStock" placeholder="Ex : 200" value="<?php echo $stockProduit ?>">
                     </div>
                     <div class="champ">
                         <label class="label" for="codeBarresProduit">Code-barres</label>
